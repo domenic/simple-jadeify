@@ -35,6 +35,10 @@ specify("It emits stream error when a non-object is used as the package.json con
     testOutputErrors("test4", done);
 });
 
+specify("It compiles to plain HTML if 'compileHtml' is set package.json config", function (done) {
+    testOutputMatches("test5", done);
+});
+
 function testOutputMatches(testDir, done) {
     process.chdir(stuffPath(testDir));
 
