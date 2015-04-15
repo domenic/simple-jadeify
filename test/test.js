@@ -37,7 +37,7 @@ specify("It can be configured with package.json", function (done) {
 specify("It can be configured with the runtimePath option", function (done) {
     testOutputMatches("test4", done, {
         self: true,
-        runtimePath: 'jade/runtime'
+        runtimePath: './jade-runtime'
     });
 });
 
