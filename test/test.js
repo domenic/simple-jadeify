@@ -49,6 +49,16 @@ specify("It should emit all files in dependency tree", function (done) {
     testFileEmit("test6", done, { self: true });
 });
 
+specify("It should create template strings when passing client=false", function (done) {
+    testOutputMatches("test7", done, { 
+        self: true,
+        client: false,
+        locals: {
+            foo: "FOO!"
+        }
+    });
+});
+
 function testOutputMatches(testDir, done, bundleOptions, preparationOptions) {
     process.chdir(stuffPath(testDir));
 
